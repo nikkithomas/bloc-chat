@@ -1,0 +1,68 @@
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4" id="left">
+            
+
+            <div id="left">
+
+
+<!--begin code for Modal-->
+              <div ng-controller="ModalCtrl" class="container">
+             
+
+              
+
+              <h3>Bloc Chat</h3> 
+
+
+
+
+              <button class="btn btn-default" ng-click="toggleModal()">Open New Room</button>
+
+              <modal-dialog show='modalShown' width='400px' height='60%'>
+              <!---
+                <form role="form">
+                  <div class="form-group">
+                    <label for="newRoom">Enter a room name</label>
+                    <input type="newRoom" class="form-control" id="newRoom" placeholder="Enter a name" />
+
+                    </div>
+                    <button type="sumbit" class="btn btn-default">Create Room</button>
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                </form>
+
+              -->
+              
+            </modal-dialog>
+
+            </div>
+
+<!--end code for Modale-->
+
+
+
+
+              <div ng-repeat="room in rooms">
+                <h4 class="roomFont"><a ng-href="" id="roomLink" style="font-size: 24px">{{room.rmName}}</a></h4>
+              </div>
+            
+
+            Rooms:{{rooms}}
+            Room:{{room}}
+          </div>
+
+
+        </div>
+        <div class="col-sm-8" id="main">
+
+            <form ng-submit="addRoom()">
+              <input type="text" ng-model="room.rmName" />
+              <input type="submit" value="Create Room" />
+          </form>
+         
+        </div>
+    </div>
+</div>
