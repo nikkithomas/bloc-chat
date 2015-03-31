@@ -1,12 +1,12 @@
 'use strict';
 
 app.controller('RoomsCtrl',function($scope, Room){
-  $scope.rooms=Room.get();
+  $scope.rooms=Room.all;
   $scope.room={rmName:''};
 
   $scope.addRoom=function(){
-    Room.save($scope.room, function(ref){
-      $scope.rooms[ref.name]=$scope.room;
+    Room.create($scope.room).then(function(){
+      //$scope.rooms[ref.name]=$scope.room;
       $scope.room={rmName:''};
 
     });

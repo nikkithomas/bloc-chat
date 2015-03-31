@@ -18,8 +18,11 @@ var app = angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'firebase'
   ])
+
+  .constant('FIREBASE_URL', 'https://bloc-chat-app.firebaseio.com/')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
