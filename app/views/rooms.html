@@ -46,7 +46,8 @@
 
 
               <div ng-repeat="room in rooms">
-                <h4 class="roomFont"><a ng-href="" id="roomLink" style="font-size: 24px">{{room.rmName}}</a></h4>
+                <h4 class="roomFont"><a ng-href="#/rooms/{{room.$id}}" id="roomLink" style="font-size: 24px">{{room.rmName}}</a></h4>
+                <!--<a ng-href="#/rooms/{{room.$id}}">Comments</a>-->
               </div>
             
 
@@ -58,10 +59,21 @@
         </div>
         <div class="col-sm-8" id="main">
 
-            <form ng-submit="addRoom()">
+            <!--<form ng-submit="addRoom()">
               <input type="text" ng-model="room.rmName" />
               <input type="submit" value="Create Room" />
-          </form>
+          </form>-->
+
+        <div>
+
+          <h4="{{room.rmName}}">{{room.rmName}}</h4>
+
+
+
+
+        </div>
+
+        <a ng-href="#/rooms">Back to Rooms</a>
          
         </div>
     </div>

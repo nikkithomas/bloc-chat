@@ -29,6 +29,21 @@ var app = angular
         templateUrl: 'views/rooms.html',
         controller: 'RoomsCtrl'
       })
+
+      .when('/rooms/:roomId',{
+        templateUrl:'views/rooms.html',
+        controller:'RoomViewCtrl'
+      })
+
+      .when('/register',{
+        templateUrl:'views/register.html',
+        controller:'AuthCtrl',
+        resolve:{
+          user: function(Auth){
+            return Auth.resolveUser();
+          }
+        }
+      })
       
       .otherwise({
         redirectTo: '/'
